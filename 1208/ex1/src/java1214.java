@@ -17,15 +17,6 @@ public class java1214 {
 //        }
     }
 
-    public static boolean isFlower(int num) {
-        if ((num%10)*(num%10)*(num%10) +
-                ((num/10)%10)*((num/10)%10)*((num/10)%10) +
-                ((num/100)%10)*((num/100)%10)*((num/100)%10)==num) {
-            return true;
-        }
-        return false;
-    }
-
     public static void guessNum(int toGuess) {
         while (true) {
             System.out.println("请输入您要猜的数字：");
@@ -43,6 +34,15 @@ public class java1214 {
                 continue;
             }
         }
+    }
+
+    public static boolean isFlower(int num) {
+        if ((num%10)*(num%10)*(num%10) +
+                ((num/10)%10)*((num/10)%10)*((num/10)%10) +
+                ((num/100)%10)*((num/100)%10)*((num/100)%10)==num) {
+            return true;
+        }
+        return false;
     }
 
     public static void graph(int row) {
