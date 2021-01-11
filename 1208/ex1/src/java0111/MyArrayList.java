@@ -1,26 +1,29 @@
 package java0111;
 
+import java.util.Arrays;
+
 public class MyArrayList {
     public int[] elem;
     public int usedSize;
     public MyArrayList() {
-        this.elem = new int[10];
+        this.elem = new int[5];
         this.usedSize = 0;
     }
     //在 pos 位置新增元素
     public void add(int pos, int data) {
-        if (pos == this.usedSize) {
-            this.usedSize++;
-            this.elem[usedSize] = data;
+        if (pos < 0 || pos > this.usedSize) {
+            System.out.println("位置不合法");
+            return;
         }
-        if (pos < this.usedSize) {
-            this.usedSize++;
-            for (int i = usedSize; i > pos; i--) {
-                this.elem[i] = this.elem[i - 1];
-            }
-            this.elem[pos] = data;
+        if (this.usedSize == this.elem.length) {
+            this.elem = Arrays.copyOf(this.elem, 2 * this.elem.length);
         }
-    }
+        for (int i = this.usedSize; i > pos; i--) {
+            this.elem[i] = this.elem[i - 1];
+        }
+        this.elem[pos] = data;
+        this.usedSize++;
+        }
     //判定是否包含某元素
     public boolean contains(int toFind) {
         return true;
@@ -47,7 +50,9 @@ public class MyArrayList {
     }
     //打印顺序表
     public void display() {
-
+        for (int i = 0; i < this.usedSize; i++) {
+            System.out.print(this.elem[i] + " ");
+        }
     }
     //清空顺序表
     public void clear() {
