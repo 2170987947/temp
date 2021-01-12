@@ -56,6 +56,6 @@ public class MyArrayList {
     }
     //清空顺序表
     public void clear() {
-
+        this.usedSize = 0;
     }
 }
