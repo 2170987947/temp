@@ -26,15 +26,28 @@ public class MyArrayList {
         }
     //判定是否包含某元素
     public boolean contains(int toFind) {
-        return true;
+        for (int i = 0; i < this.usedSize; i++) {
+            if (toFind == this.elem[i]) {
+                return true;
+            }
+        }
+        return false;
     }
     //查找某个元素对应的位置
     public int search(int toFind) {
+        for (int i = 0; i < this.usedSize; i++) {
+            if (toFind == this.elem[i]) {
+                return i;
+            }
+        }
         return -1;
     }
     //获取 pos 位置的元素
     public int getPos(int pos) {
-        return -1;
+        if (pos >= this.usedSize) {
+            System.out.println("输入位置不合法");
+        }
+        return this.elem[pos];
     }
     //给 pos 位置的元素设为 value
     public void setPos(int value) {
@@ -46,7 +59,7 @@ public class MyArrayList {
     }
     //获取顺序表长度
     public int sizee() {
-        return 0;
+        return this.usedSize;
     }
     //打印顺序表
     public void display() {
