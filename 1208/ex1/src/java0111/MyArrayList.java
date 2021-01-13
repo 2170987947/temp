@@ -44,31 +44,51 @@ public class MyArrayList {
     }
     //获取 pos 位置的元素
     public int getPos(int pos) {
-        if (pos >= this.usedSize) {
+        if (pos < 0  || pos >= this.usedSize) {
             System.out.println("输入位置不合法");
         }
         return this.elem[pos];
     }
     //给 pos 位置的元素设为 value
-    public void setPos(int value) {
-
+    public void setPos(int pos, int value) {
+        if (pos >= this.usedSize) {
+            System.out.println("输入位置不合法");
+        }
+        this.elem[pos] = value;
     }
     //删除第一次出现的关键字 key
     public void remove(int toRemove) {
-
+        int index = search(toRemove);
+        if (index == -1) {
+            System.out.println("该数字不存在");
+            return;
+        }
+        for (int i = index; i < this.usedSize - 1; i++) {
+            this.elem[i] = this.elem[i + 1];
+        }
+        this.usedSize--;
     }
     //获取顺序表长度
-    public int sizee() {
+    public int size() {
         return this.usedSize;
     }
     //打印顺序表
     public void display() {
+        if (this.usedSize == 0) {
+            System.out.println("顺序表为空");
+            return;
+        }
+        System.out.print("顺序表为 : ");
         for (int i = 0; i < this.usedSize; i++) {
             System.out.print(this.elem[i] + " ");
         }
+        System.out.println();
     }
     //清空顺序表
     public void clear() {
+//        for (int i = 0; i < this.usedSize; i++) {
+//            this.elem[i] = null;
+//        }
         this.usedSize = 0;
     }
 }

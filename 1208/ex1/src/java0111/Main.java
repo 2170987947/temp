@@ -11,7 +11,12 @@ public class Main {
         myArrayList.add(4, 5);
         myArrayList.add(5, 6);
         myArrayList.display();
-        System.out.println("lll");
-
+        System.out.println(myArrayList.contains(7));
+        System.out.println(myArrayList.getPos(5));
+        System.out.println(myArrayList.search(5));
+        myArrayList.remove(2);
+        myArrayList.display();
+        myArrayList.clear();
+        myArrayList.display();
     }
 }
