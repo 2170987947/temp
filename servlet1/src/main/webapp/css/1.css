@@ -1,0 +1,16 @@
+body {
+    background-image: url("http://www.shijuepi.com/uploads/allimg/200918/1-20091Q10420.jpg");
+    background-repeat: no-repeat;
+}
+#label1 {
+    color: blue;
+}
+#label2 {
+    color: aqua;
+}
+#label3 {
+    color: blueviolet;
+}
+div:hover {
+    color: crimson;
+}
