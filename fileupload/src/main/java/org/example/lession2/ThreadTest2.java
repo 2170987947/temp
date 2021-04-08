@@ -1,4 +1,4 @@
-package org.lession2;
+package org.example.lession2;
 
 /**
  * @author FMM

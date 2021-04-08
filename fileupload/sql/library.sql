@@ -52,3 +52,11 @@ insert into student(id, name, age) values
                                         (1, '张三三', 10),
                                         (2, '李四', 24),
                                         (3, '张小', 25);
+
+create table article
+(
+    id int primary key auto_increment,
+    title varchar(20),
+    create_time timestamp default now()
+);
+insert into article(id, title, create_time) values(1, null, '2000-01-01 00:00:00');
