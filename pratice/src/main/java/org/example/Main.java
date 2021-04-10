@@ -7,6 +7,14 @@ package org.example;
  */
 public class Main {
     public static void main(String[] args) {
-
+        ImageReadFactory imageReaderFactory = null;
+        ImageReader imageReader;
+        try {
+            imageReaderFactory = (ImageReadFactory) XMLUtil.getBean();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        imageReader = imageReaderFactory.createImageReadeer();
+        imageReader.readImage();
     }
 }
