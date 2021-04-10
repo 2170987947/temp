@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <className>org.fmm.ConcreteFactroy.SpringSkinFactory</className>
+    <className>org.fmm.ConcreteFactroy.SummerSkinFactory</className>
+</config>
