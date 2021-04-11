@@ -20,28 +20,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9b2fd13-027a-429e-9fbf-530cfe3f7598" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/OrganizationComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pratice/mysql/test.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pratice/mysql/多表查询2.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pratice/src/test/java/org/example/GifReaderFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pratice/src/test/java/org/example2/AirTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blogdemo/.idea/blogdemo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compositePattern.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Office.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Unit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex1/ex1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex1/first/first.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../fileupload/fileupload.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pratice/pratice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projectBlog/projectBlog.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servlet1/servlet1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../skininterfacefactory/skininterfacefactory.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test0325/.idea/test0325.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test0325/test0325.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Test/Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Test/Test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/OrganizationComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Institution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fileupload/sql/library.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../fileupload/sql/library.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/GifReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/main/java/org/example/GifReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/GifReaderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/main/java/org/example/GifReaderFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/ImageReadFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/main/java/org/example/ImageReadFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/ImageReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/main/java/org/example/ImageReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/JpgReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/main/java/org/example/JpgReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/JpgReaderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/main/java/org/example/JpgReaderFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../pratice/src/main/java/org/example/XMLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/main/java/org/example/XMLUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pratice/src/main/resources/image/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pratice/src/test/java/org/example/ImageFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pratice/src/test/java/org/example/JpgReadFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +86,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/example.java" />
@@ -87,13 +96,26 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/java/org/example.java" />
   </component>
   <component name="RunManager">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Client" />
+      <module name="compositePattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
@@ -157,6 +179,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -169,6 +196,9 @@
       <option name="presentableId" value="Default" />
       <updated>1618021300960</updated>
       <workItem from="1618021304559" duration="1621000" />
+      <workItem from="1618030772941" duration="2331000" />
+      <workItem from="1618052961231" duration="621000" />
+      <workItem from="1618064243009" duration="34000" />
     </task>
     <servers />
   </component>
@@ -185,8 +215,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="248" y="6" key="#Project_Structure" timestamp="1618031496576">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="248" y="6" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1618031496576" />
+    <state x="573" y="147" key="#com.intellij.ide.util.MemberChooser" timestamp="1618031131556">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="573" y="147" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1618031131556" />
     <state x="93" y="93" width="1350" height="678" key="DiffContextDialog" timestamp="1618021754328">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -195,5 +234,21 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1618021442782" />
+    <state width="1491" height="400" key="GridCell.Tab.0.bottom" timestamp="1618033114174">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1491" height="400" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
+    <state width="1491" height="400" key="GridCell.Tab.0.center" timestamp="1618033114174">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1491" height="400" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
+    <state width="1491" height="400" key="GridCell.Tab.0.left" timestamp="1618033114174">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1491" height="400" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
+    <state width="1491" height="400" key="GridCell.Tab.0.right" timestamp="1618033114174">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1491" height="400" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
   </component>
 </project>
