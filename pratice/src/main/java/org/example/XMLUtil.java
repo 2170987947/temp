@@ -23,8 +23,8 @@ public class XMLUtil {
         Document document = documentBuilder.parse(new File("config.xml"));
         NodeList nodeList = document.getElementsByTagName("image");
         Node imageTypeNode = nodeList.item(0).getFirstChild();
-        String imageType = imageTypeNode.getNodeValue().trim();
-        Class clazz = Class.forName(imageType + "ReaderFactory");
+        String image = imageTypeNode.getNodeValue().trim();
+        Class clazz = Class.forName(image);
         Object object = clazz.newInstance();
         return object;
     }

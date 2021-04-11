@@ -5,7 +5,7 @@ package org.example;
  * @version 7.0
  * @date 2021/4/9 14:07
  */
-public abstract class ImageReadFactory {
+interface ImageReadFactory {
 
-    public abstract ImageReader createImageReadeer();
+    ImageReader createImageReadeer();
 }
