@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function run1() {
+            alert("加载完毕");
+        }
+        // DOM 绑定方式: 对象.事件属性--> 一次只能绑定一个, 不能传递参数
+        // window.onload = run1();
+
+        // DOM 绑定方式: 匿名函数--> 建议使用: 能绑定多个, 能传递参数
+        window.onload = function () {
+            run1();
+            run2();
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

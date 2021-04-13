@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function run1() {
+            alert("表单提交按钮被点击了");
+            // TODO: 表单提交
+            return false;
+        }
+    </script>
+</head>
+<body>
+<!--
+表单提交按钮被点击时触发, 执行 run1() 方法
+onsubmit 用于表单的校验, 也可以控制表单的提交
+true 允许表单提交
+false 阻止表单提交
+-->
+    <form onsubmit="return run1()">
+        <input type="text" name="uname"><br>
+        <input type="submit" value="提交"><br>
+    </form>
+</body>
+</html>

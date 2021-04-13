@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function run1() {
+            alert("run1");
+        }
+        function run2() {
+            alert("run2");
+        }
+        window.onload = function () {
+            // DOM 方式获取元素对象
+            var t1 = document.getElementById("t1");
+            t1.onclick = function () {
+                run1();
+                run2();
+            }
+        }
+    </script>
+</head>
+<body>
+<!--
+为文本框 onclick 绑定上班定两个函数, run1 和 run2
+-->
+<!--    <input type="text" onclick="run1(), run2()">-->
+    <input type="text" id="t1">
+</body>
+</html>
