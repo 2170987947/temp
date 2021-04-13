@@ -3,8 +3,8 @@
 
     public class connect {
         public static void main(String[] args) {
-            Connection conn = null;
-            Statement stmt = null;
+            Connection con = null;
+            Statement sta = null;
             ResultSet rs = null;
 
             try {
@@ -13,17 +13,17 @@
                 long start = System.currentTimeMillis();
 
                 // 建立连接
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cart",
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cart",
                         "root", "123456");
                 long end = System.currentTimeMillis();
-                System.out.println(conn);
+                System.out.println(con);
                 System.out.println("建立连接耗时： " + (end - start) + "ms 毫秒");
 
                 // 创建Statement对象
-                stmt = conn.createStatement();
+                sta = con.createStatement();
 
                 // 执行SQL语句
-                rs = stmt.executeQuery("select * from heima");
+                rs = sta.executeQuery("select * from heima");
                 System.out.println("id\tname\tage\tsex");
                 while (rs.next()) {
                     System.out.println(rs.getInt(1) + "\t" + rs.getString(2)
@@ -45,15 +45,15 @@
                 }
 
                 try {
-                    if (stmt != null) {
-                        stmt.close();
+                    if (sta != null) {
+                        sta.close();
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
                 try {
-                    if (conn != null) {
-                        conn.close();
+                    if (con != null) {
+                        con.close();
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
