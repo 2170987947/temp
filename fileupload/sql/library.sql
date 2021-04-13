@@ -9,6 +9,7 @@ create table if not exists book
     name varchar(20) not null,
     author varchar(20) not null,
     price int,
+#     不能自动更新
     publish_data date,
     sort varchar(20)
 );
