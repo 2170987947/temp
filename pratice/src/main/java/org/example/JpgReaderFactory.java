@@ -7,7 +7,7 @@ package org.example;
  * @date 2021/4/9 14:13
  */
 public class JpgReaderFactory implements ImageReadFactory {
-    public ImageReader createImageReadeer() {
+    public ImageReader createImageReader() {
         JpgReader jpgReader = new JpgReader();
         return jpgReader;
     }

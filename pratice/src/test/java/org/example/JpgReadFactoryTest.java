@@ -12,6 +12,6 @@ public class JpgReadFactoryTest {
     @Test
     public void main() {
         ImageReadFactory imageReadFactory = new JpgReaderFactory();
-        Assert.assertNotNull(imageReadFactory.createImageReadeer());
+        Assert.assertNotNull(imageReadFactory.createImageReader());
     }
 }

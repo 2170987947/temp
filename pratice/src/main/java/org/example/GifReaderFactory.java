@@ -7,7 +7,7 @@ package org.example;
  */
 public class GifReaderFactory implements ImageReadFactory {
 
-    public GifReader createImageReadeer() {
+    public GifReader createImageReader() {
         GifReader gifReader = new GifReader();
         return gifReader;
     }

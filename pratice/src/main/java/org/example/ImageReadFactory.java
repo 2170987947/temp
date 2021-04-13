@@ -6,6 +6,5 @@ package org.example;
  * @date 2021/4/9 14:07
  */
 interface ImageReadFactory {
-
-    ImageReader createImageReadeer();
+    ImageReader createImageReader();
 }

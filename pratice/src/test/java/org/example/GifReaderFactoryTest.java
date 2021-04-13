@@ -12,6 +12,6 @@ public class GifReaderFactoryTest {
     @Test
     public void main() {
         ImageReadFactory imageReadFactory = new GifReaderFactory();
-        Assert.assertNotNull(imageReadFactory.createImageReadeer());
+        Assert.assertNotNull(imageReadFactory.createImageReader());
     }
 }
