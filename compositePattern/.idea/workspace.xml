@@ -20,29 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9b2fd13-027a-429e-9fbf-530cfe3f7598" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../fileupload/fileupload.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projectBlog/projectBlog.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../servlet1/servlet1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../skininterfacefactory/skininterfacefactory.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test0325/.idea/test0325.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test0325/test0325.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/web/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Test/Test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bookstrap/first/first.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fileupload/sql/library.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../fileupload/sql/library.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/p.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1/ex1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/pp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1/first/first.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/bean/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/bean/OrderItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/bean/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/bean/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/dao/OrderDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/dao/OrderItemDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/dao/ProductDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/servlet/OrderCreateServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/servlet/OrderItemAddServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/servlet/OrderItemListServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../p/pp/src/servlet/UserLoginServlet.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servlet1/src/main/java/org/example/AbstractServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servlet1/src/main/java/org/example/AbstractServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +75,12 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/java/org/example.java" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ClientTest.main">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Client" />
       <module name="compositePattern" />
@@ -105,6 +90,16 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="compositePattern" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClientTest" />
+      <option name="METHOD_NAME" value="main" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,6 +169,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClientTest.main" />
         <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
@@ -193,6 +189,10 @@
       <workItem from="1618052961231" duration="621000" />
       <workItem from="1618064243009" duration="34000" />
       <workItem from="1618124591094" duration="130000" />
+      <workItem from="1618487523338" duration="416000" />
+      <workItem from="1618490250561" duration="163000" />
+      <workItem from="1618490980158" duration="91000" />
+      <workItem from="1618493106050" duration="94000" />
     </task>
     <servers />
   </component>
@@ -228,21 +228,21 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1618021442782" />
-    <state width="1491" height="400" key="GridCell.Tab.0.bottom" timestamp="1618033114174">
+    <state width="1491" height="400" key="GridCell.Tab.0.bottom" timestamp="1618493202197">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="400" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
-    <state width="1491" height="400" key="GridCell.Tab.0.center" timestamp="1618033114174">
+    <state width="1491" height="400" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1618493202197" />
+    <state width="1491" height="400" key="GridCell.Tab.0.center" timestamp="1618493202197">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="400" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
-    <state width="1491" height="400" key="GridCell.Tab.0.left" timestamp="1618033114174">
+    <state width="1491" height="400" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1618493202197" />
+    <state width="1491" height="400" key="GridCell.Tab.0.left" timestamp="1618493202197">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="400" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
-    <state width="1491" height="400" key="GridCell.Tab.0.right" timestamp="1618033114174">
+    <state width="1491" height="400" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1618493202197" />
+    <state width="1491" height="400" key="GridCell.Tab.0.right" timestamp="1618493202197">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="400" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1618033114174" />
+    <state width="1491" height="400" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1618493202197" />
   </component>
 </project>
