@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class Parser {
     public static final String API_PATH = "D:\\jdkAPI\\jdk-8u281-docs-all\\docs\\api";
-    public static final String OUTPUT_PATH = "E:\\tt\\ww.txt";
+    public static final String OUTPUT_PATH = "D:\\jdkAPI\\target\\ww.txt";
     public static final String API_BATH_PATH = "https://docs.oracle.com/javase/8/docs/api/";
 
     public static void main(String[] args) throws IOException {
