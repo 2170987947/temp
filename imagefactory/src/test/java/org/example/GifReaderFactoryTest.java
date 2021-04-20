@@ -12,6 +12,7 @@ public class GifReaderFactoryTest {
     @Test
     public void main() {
         ImageReadFactory imageReadFactory = new GifReaderFactory();
+        imageReadFactory.createImageReader().readImage();
         Assert.assertNotNull(imageReadFactory.createImageReader());
     }
 }
