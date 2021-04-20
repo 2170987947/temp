@@ -1,3 +1,5 @@
+package test0412;
+
 import java.util.*;
 public class Test {
     public static ArrayList<Character> toList(String a) {

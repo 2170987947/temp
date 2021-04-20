@@ -1,3 +1,5 @@
+package test0412;
+
 /**
  * @author FMM
  * @version 7.0
