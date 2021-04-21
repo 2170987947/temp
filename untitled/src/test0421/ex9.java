@@ -1,0 +1,20 @@
+package test0421;
+
+/**
+ * @author FMM
+ * @version 7.0
+ * @date 2021/4/21 19:15
+ */
+public class ex9 {
+    public static void main(String[] args) {
+        StringBuffer a = new StringBuffer("A");
+        StringBuffer b = new StringBuffer("B");
+        operate(a, b);
+        System.out.println(a + ", " + b);
+    }
+
+    private static void operate(StringBuffer a, StringBuffer b) {
+        a.append(b);
+        b = a;
+    }
+}
