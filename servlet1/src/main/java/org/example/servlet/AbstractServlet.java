@@ -1,4 +1,4 @@
-package org.example;
+package org.example.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,22 +25,22 @@ public class AbstractServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
+        PrintWriter pw = resp.getWriter();
         System.out.println("打印");
         System.out.println(req.getServerName());
-        PrintWriter pw = resp.getWriter();
         pw.println(req.getScheme() + "\n");
         pw.println(req.getLocalPort() + "\n");
 //        pw.println(req.getRequestURI());
-////        pw.println(req.getServletPath());
-////        pw.println(req.getContextPath());
-////        pw.println(req.getRemotePort());
-////        pw.println(req.getMethod());
-        pw.println(req.getPart("ff"));
-////        pw.println(req.getCookies());
-        pw.println(req.getRequestURL());
-        System.out.println(resp.getStatus());
-        System.out.println(resp.getClass());
-        System.out.println(resp.getOutputStream());
+//        pw.println(req.getServletPath());
+//        pw.println(req.getContextPath());
+//        pw.println(req.getRemotePort());
+//        pw.println(req.getMethod());
+//        pw.println(req.getPart("ff"));
+//        pw.println(req.getCookies());
+//        pw.println(req.getRequestURL());
+//        System.out.println(resp.getStatus());
+//        System.out.println(resp.getClass());
+//        System.out.println(resp.getOutputStream());
         pw.flush();
         pw.close();
     }
