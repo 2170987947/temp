@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @date 2021/1/26 12:42
  */
 public class AddBook implements IBookOperation {
+    
     @Override
     public void work(BookList bookList) {
         System.out.println("添加书籍");

@@ -10,6 +10,7 @@ import java.util.Scanner;
  * @date 2021/1/26 12:43
  */
 public class DeleteBook implements IBookOperation {
+
     @Override
     public void work(BookList bookList) {
         System.out.println("删除书籍");
