@@ -33,16 +33,16 @@ public class LoginServlet2 extends HttpServlet {
         User input = mapper.readValue(is, User.class);
 
         PrintWriter pw = resp.getWriter();
-//        Map<String, Object> map = new HashMap<>();
-//        if ("abc".equals(input.getUsername()) && "123".equals(input.getPassword())) {
-//            map.put("ok", true);
-//            map.put("message", input);
-//        } else {
-//            map.put("ok", false);
-//            map.put("code", "LOG001");
-//            map.put("msg", "用户名或密码错误");
-//        }
-//
-//        pw.println(mapper.writeValueAsString(map));
+        Map<String, Object> map = new HashMap<>();
+        if ("abc".equals(input.getUsername()) && "123".equals(input.getPassword())) {
+            map.put("ok", true);
+            map.put("message", input);
+        } else {
+            map.put("ok", false);
+            map.put("code", "LOG001");
+            map.put("msg", "用户名或密码错误");
+        }
+
+        pw.println(mapper.writeValueAsString(map));
     }
 }
