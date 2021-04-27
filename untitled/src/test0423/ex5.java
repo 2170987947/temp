@@ -10,26 +10,25 @@ import java.util.Scanner;
 public class ex5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        byte n = in.nextByte();
-        if (Byte.MIN_VALUE > n || n > Byte.MAX_VALUE) {
-            System.out.println(0);
-        }
-        byte tt = 1;
-        int count = 0;
-        int ret = 0;
-        StringBuffer str = new StringBuffer();
-        for (int i = 0; i < 8; i++) {
-            if ((n & (tt << i)) > 0) {
-                str.append('1');
-                count++;
-            } else {
-                str.append('0');
-                count = 0;
+        while (in.hasNext()) {
+            int n = in.nextInt();
+            byte tt = 1;
+            int count = 0;
+            int ret = 0;
+            StringBuffer str = new StringBuffer();
+            for (int i = 0; i < 32; i++) {
+                if ((n & (tt << i)) > 0) {
+                    str.append('1');
+                    count++;
+                } else {
+                    str.append('0');
+                    count = 0;
+                }
+                if (count > ret) {
+                    ret = count;
+                }
             }
-            if (count > ret) {
-                ret = count;
-            }
+            System.out.println(ret);
         }
-        System.out.println(ret);
     }
 }

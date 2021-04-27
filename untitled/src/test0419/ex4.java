@@ -12,33 +12,24 @@ public class ex4 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int[] arr = new int[101];
-        int count = 0;
         while (in.hasNext()) {
             String s = in.nextLine();
             String[] ss = s.split(" ");
-            for (int j = 0; j < ss.length; j++) {
-                arr[count++] = Integer.parseInt(ss[j]);
+            int[] arr = new int[ss.length - 1];
+            for (int j = 0; j < arr.length; j++) {
+                arr[j] = Integer.parseInt(ss[j]);
             }
-            tt(count, arr);
+            tt(Integer.parseInt(ss[ss.length - 1]), arr);
         }
     }
 
-    private static void tt(int count, int[] arr) {
-        int k = arr[count - 1];
-        int[] arr1 = new int[count--];
-        for (int i = 0; i < count; i++) {
-            arr1[i] = arr[i];
-        }
-        Arrays.sort(arr1);
-        int[] result = new int[k];
-        for (int i = 0; i < k; i++) {
-            result[i] = arr1[i];
-        }
+    private static void tt(int k, int[] arr) {
+        Arrays.sort(arr);
+
         StringBuffer result1 = new StringBuffer();
-        for (int i = 0; i < result.length; i++) {
-            result1.append(result[i]);
-            if (i < result.length - 1) {
+        for (int i = 0; i < k; i++) {
+            result1.append(arr[i]);
+            if (i < k - 1) {
                 result1.append(" ");
             }
         }

@@ -15,7 +15,6 @@ public class ex1 {
             if (str.charAt(i) == '\"') {
                 i++;
                 start = i;
-
             }
             while (i < str.length() && str.charAt(i) != ' ') {
                 if (start > 0 && str.charAt(start - 1) == '\"' && str.charAt(i) == '\"') {
