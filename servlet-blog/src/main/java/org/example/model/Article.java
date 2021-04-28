@@ -14,7 +14,7 @@ import java.util.Date;
 @ToString
 @Getter
 @Setter
-public class Aricle {
+public class Article {
     private Integer id;
     private String title;
     private String content;
