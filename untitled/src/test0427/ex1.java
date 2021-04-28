@@ -10,6 +10,5 @@ import javax.servlet.Servlet;
  */
 public class ex1 {
     public static void main(String[] args) {
-        GenericServlet
     }
 }
