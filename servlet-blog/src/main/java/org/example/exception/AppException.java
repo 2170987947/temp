@@ -9,7 +9,7 @@ package org.example.exception;
 public class AppException extends RuntimeException {
     private String code;
 
-    public AppException(String message, String code) {
+    public AppException(String code, String message) {
         this(code, message, null);
     }
 

@@ -55,11 +55,19 @@ public class ArticleDAO {
         ResultSet rs = null;
         try {
             c = DBUtil.getConnection();
-            String sql = "delete from article where id = ?";
-            ps = c.prepareStatement(sql);
+            StringBuffer sql = new StringBuffer("delete from article where id in (");
             for (int i = 0; i < split.length; i++) {
-//                ps.setInt(Integer.parseInt(split[i]));
+                if (i < split.length - 1) {
+                    sql.append("?, ");
+                } else {
+                    sql.append("?);");
+                }
             }
+            ps = c.prepareStatement(sql.toString());
+            for (int i = 1; i <= split.length; i++) {
+                ps.setInt(i, Integer.parseInt(split[i - 1]));
+            }
+            ps.executeUpdate();
         } catch (Exception e) {
             throw new AppException("ART003", "删除文章出错", e);
         } finally {
