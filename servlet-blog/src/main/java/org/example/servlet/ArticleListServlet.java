@@ -21,7 +21,7 @@ public class ArticleListServlet extends AbstractBaseServlet {
 
     @Override
     protected Object process(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
         User query = (User) session.getAttribute("user");
         List<Article> articles = ArticleDAO.query(query.getId());
         return articles;
