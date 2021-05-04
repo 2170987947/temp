@@ -12,7 +12,6 @@ public class ex1 {
         System.out.println("jkl");
         String str = "www";
         Scanner in = new Scanner(System.in);
-
         int i = in.nextInt();
         int j = in.nextInt();
         System.out.println(i + j);
