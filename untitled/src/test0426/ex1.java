@@ -18,9 +18,10 @@ public class ex1 {
                     start = i;
                 }
                 while (i < str.length() && str.charAt(i) != ' ') {
-                    if (start > 0 && str.charAt(start - 1) == '\"' && str.charAt(i) == '\"') {
-                        end = i;
+                    while (i < str.length() && start > 0 && str.charAt(start - 1) == '\"' && str.charAt(i) != '\"') {
                         flag = true;
+                        i++;
+                        end = i;
                     }
                     i++;
                 }
