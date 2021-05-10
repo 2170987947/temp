@@ -45,7 +45,7 @@ public class ex1 {
                         return true;
                     }
                 }
-            } else if (a.charAt(i) != b.charAt(j)) {
+            } else if (j < b.length() && a.charAt(i) != b.charAt(j)) {
                 return false;
             }
             if (i == a.length() && j == b.length()) {
