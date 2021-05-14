@@ -1,7 +1,5 @@
 package test0427;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.Servlet;
 
 /**
  * @author FMM
