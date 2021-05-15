@@ -1,4 +1,4 @@
-package java0514;
+package test0514;
 
 public class ex1 {
     public static void main(String[] args) {
