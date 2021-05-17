@@ -10,31 +10,21 @@ import java.util.Scanner;
 public class ex2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        while (in.hasNextLine()) {
-            String str = in.nextLine();
-            String[] p = str.split(" ");
-            int[] arr = array(p);
-            int n = Integer.parseInt(p[0]);
-            int k = Integer.parseInt(p[1]);
-            arr = reshuffle(n, k, arr);
-            StringBuilder ret = new StringBuilder();
-            for (int i : arr) {
-                if (i == arr.length - 1) {
-                    ret.append(i);
-                } else {
-                    ret.append(i + " ");
-                }
+        int groups = in.nextInt();
+        for (int j = 0; j < groups; j++) {
+            int n = in.nextInt();
+            int k = in.nextInt();
+            int[] cards = new int[2 * n];
+            for (int i = 0; i < 2 * n; i++) {
+                cards[i] = in.nextInt();
             }
-            System.out.println(ret);
+            cards = reshuffle(n, k, cards);
+            StringBuilder ret = new StringBuilder();
+            for (int i : cards) {
+                System.out.println(i + " ");
+            }
+            System.out.println();
         }
-    }
-
-    private static int[] array(String[] p) {
-        int[] arr = new int[p.length - 2];
-        for (int i = 2; i < p.length; i++) {
-            arr[i - 2] = Integer.parseInt(p[0]);
-        }
-        return arr;
     }
 
     private static int[] reshuffle(int n, int k, int[] p) {
@@ -44,15 +34,10 @@ public class ex2 {
         int[] arr = new int[p.length];
         int ji = 1;
         int ou = 0;
-        for (int i = 0; i < p.length; i++) {
-            if (i < p.length / 2) {
-                arr[ou] = p[i];
-                ou += 2;
-            } else {
-                arr[ji] = p[i];
-                ji += 2;
-            }
+        for (int i = 0; i < p.length / 2; i++) {
+            arr[2 * i] = p[i];
+            arr[2 * i + 1] = p[i + n];
         }
-        return p;
+        return reshuffle(n, k - 1, arr);
     }
 }

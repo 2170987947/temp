@@ -21,13 +21,8 @@ public class ex2 {
         for (int j = 1; j < a.length() + 1; j++) {
             arr[0][j] = j;
         }
-        for (int i = 1; i < b.length() + 1; i++) {
-            for (int j = 1; j < b.length() + 1; j++) {
-                arr[i][j] = Integer.MAX_VALUE;
-            }
-        }
-        for (int i = 1; i < b.length() + 1; i++) {
-            for (int j = 1; j < a.length() + 1; j++) {
+        for (int i = 1; i <= b.length() + 1; i++) {
+            for (int j = 1; j <= a.length() + 1; j++) {
                 if (b.charAt(i - 1) == a.charAt(j - 1)) {
                     arr[i][j] = cmp(arr[i][j - 1] + 1, arr[i - 1][j] + 1, arr[i - 1][j - 1]);
                 } else {
