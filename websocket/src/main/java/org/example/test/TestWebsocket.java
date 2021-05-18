@@ -1,4 +1,4 @@
-package org.example;
+package org.example.test;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
