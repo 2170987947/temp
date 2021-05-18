@@ -72,7 +72,7 @@ public class AprioriTool {
      * @param array2
      * @return
      */
-    public boolean iSStrContain(String[] array1, String[] array2) {
+    public boolean isStrContain(String[] array1, String[] array2) {
         if (array1 == null || array2 == null) {
             return false;
         }
