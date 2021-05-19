@@ -34,11 +34,11 @@ public class GameAPI {
     }
 
     @OnMessage
-    public void onMesage(Session session, String message) throws IOException {
+    public void onMesage(Session session, String message) throws IOException, InterruptedException {
         System.out.println("收到消息! message: " + message);
         Request request = gson.fromJson(message, Request.class);
         if (request.getType().equals("startMatch")) {
-
+            Matcher.getInstance().addMatchQueue(request);
         } else if (request.getType().equals("putChess")) {
             System.out.println();
         } else {

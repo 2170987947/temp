@@ -37,6 +37,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.45</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+        </dependency>
         <!--JSON库，gson-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -55,7 +60,7 @@
 
     <build>
         <!-- 指定最终 war 包的名称 -->
-        <finalName>java42_chess</finalName>
+        <finalName>chess</finalName>
 
         <!-- 明确指定一些插件的版本，以免受到 maven 版本的影响 -->
         <pluginManagement>
