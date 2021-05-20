@@ -132,7 +132,9 @@ public class AprioriTool {
         }
         // 将初始频繁项集转入到列表中，以便继续做连接运算
         for (Map.Entry entry : itemMap.entrySet()) {
-            list.add((FrequentItem) entry.getValue());
+            if (((FrequentItem) entry.getValue()).getCount() >= minSupportCount) {
+                list.add((FrequentItem) entry.getValue());
+            }
         }
         // 按照商品ID进行排序，否则连接计算结果将会不一致，将会减少
         Collections.sort(list);
