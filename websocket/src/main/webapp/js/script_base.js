@@ -65,7 +65,7 @@ window.onbeforeunload = function () {
 function startMatch(userId) {
     var message = {
         type: "startMatch",
-        userId: userId,
+        userId: userId
     };
     websocket.onmessage = handlerStartMatch;
     websocket.send(JSON.stringify(message));
@@ -109,7 +109,7 @@ function initGame() {
     }
     var chess = document.getElementById('chess');
     var context = chess.getContext('2d');
-    context.strokeStyle = "#BFBFBF";
+    context.strokeStyle = "#bfbfbf";
     // 背景图片
     var logo = new Image();
     logo.src = "images/sky.jpeg";
@@ -173,60 +173,57 @@ function initGame() {
 
     // 发送落子的请求
     function send(row, col) {
-        console.log("send: " + row + "," + col);
-        // 构造一个落子请求对象
+        console.log("send: " + row + ", " + col);
+        // 构造落子请求对象
         var request = {
-            type: "putChess",
+            type: "putchess",
             userId: gameInfo.userId,
             roomId: gameInfo.roomId,
             row: row,
-            col: col,
-        };
+            col: col
+        }
+        // 先将对象转换成 JSON 字符串, 发送给服务器
         websocket.send(JSON.stringify(request));
     }
 
     // 新增处理服务器返回数据的请求
     // 并绘制棋子, 以及判定胜负
     function handlerPutChess(event) {
-        console.log("handlerPutChess: " + event.data);
-        // 1. 把收到的响应数据转成 JS 对象
+        console.log("handlerPurChess: " + event.data);
+        // 1. 把收到的响应对象转换成 JS 对象
         var response = JSON.parse(event.data);
-        if (response.type != "putChess") {
-            console.log("handlerChess: 无效的响应类型! type: " + response.type);
+        if (response.type != "putchess") {
+            console.log("handlerChess : 无效的响应类型! type: " + response.type);
             return;
         }
-        // 2. 根据响应对象中 userId 字段来判定一下这个棋子是自己落的还是对方落的
+        // 2. 根据响应对象中的 userId 字段来判断一下这个妻子是自己落的还是对方落的
         if (response.userId == gameInfo.userId) {
-            // 自己落的子
-            // 当前玩家自己的黑白子的情况在 gameInfo.isWhite 中记录呢
+            // 自己落得子
             oneStep(response.col, response.row, gameInfo.isWhite);
         } else {
             // 对方落的子
-            oneStep(response.col, response.row, !gameInfo.isWhite);
+            oneStep(response.col, response.row, gameInfo.isWhite);
         }
-        // 3. 给本地的棋盘设置一个标记, 防止同一个位置出现重复落子的情况
-        //    本地的棋盘不需要关注 "胜负", 胜负是服务器计算的
-        //    本地棋盘只需要防止同一个位置被重复落子即可
-        //    就简单约定, 已经有子的地方设为 1, 未落子的地方设为 0
-        chessBoard[row][col] = 1;
+        // 3. 给本地棋盘设置标志位, 防止重复落子
+        chessBoard[response.row][response.col] = 1;
         // 4. 切换双方的落子顺序
         me = !me;
-        // 5. 更新界面, 提示由谁来落子
+        // 5. 更新页面, 提示由谁来落子
         setScreenText(me);
-        // 6. 判定游戏是否结束. 服务器已经计算好了, 已经返回给浏览器了
+        // 6. 判断游戏是否结束, 服务器已经计算好了, 已经返回给浏览器
         if (response.winner != 0) {
-            // 胜负已分. 
+            // 胜负已分
             if (response.winner == gameInfo.userId) {
-                // 自己获胜了
-                alert("你赢了!");
+                // 自己获胜
+                window.alert("你赢了!");
             } else {
-                // 对方获胜了
-                alert("你输了!");
+                // 对方获胜
+                window.alert("你输了!");
             }
-            // 就要开始下一局游戏了
-            // 此处使用一种偷懒的方式来实现, 直接刷新页面
+            // 就要开始下一局游戏: 直接刷新页面
             window.location.reload();
         }
+
     }
 
     websocket.onmessage = handlerPutChess;

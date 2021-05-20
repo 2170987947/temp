@@ -1,6 +1,5 @@
 package org.example.game;
 
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RoomManager {
@@ -13,7 +12,7 @@ public class RoomManager {
         return roomManager;
     }
     public void addRoom(Room room) {
-        rooms.put(room.getRommId(), room);
+        rooms.put(room.getRoomId(), room);
     }
     public void Room(Room room) {
         rooms.remove(room);

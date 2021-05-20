@@ -50,12 +50,12 @@ public class Matcher {
         RoomManager.getInstance().addRoom(room);
 
         MatchResponse response1 = new MatchResponse();
-        response1.setRoomId(room.getRommId());
+        response1.setRoomId(room.getRoomId());
         response1.setWhite(true);
         response1.setOtherUserId(player2.getUserId());
         session1.getBasicRemote().sendText(gson.toJson(response1));
         MatchResponse response2 = new MatchResponse();
-        response2.setRoomId(room.getRommId());
+        response2.setRoomId(room.getRoomId());
         response2.setWhite(true);
         response2.setOtherUserId(player2.getUserId());
         session2.getBasicRemote().sendText(gson.toJson(response2));

@@ -39,7 +39,8 @@ public class GameAPI {
         Request request = gson.fromJson(message, Request.class);
         if (request.getType().equals("startMatch")) {
             Matcher.getInstance().addMatchQueue(request);
-        } else if (request.getType().equals("putChess")) {
+        } else if (request.getType().equals("putchess")) {
+            RoomManager.getInstance().getRoom(request.getRoomId()).putchess(request);
             System.out.println();
         } else {
             System.out.println();
