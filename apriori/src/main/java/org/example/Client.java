@@ -11,7 +11,7 @@ package org.example;
  */
 public class Client {
     public static void main(String[] args){
-        String filePath = "D:\\Gitku\\testInput.txt";
+        String filePath = "D:\\Gitku\\testInput2.txt";
         AprioriTool tool = new AprioriTool(filePath, 2);
         tool.printAttachRule(0.7);
     }
