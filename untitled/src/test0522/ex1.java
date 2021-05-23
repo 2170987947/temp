@@ -4,11 +4,6 @@ import java.util.Scanner;
 
 public class ex1 {
     public static void main(String[] args) {
-        Character[] characters = new Character[26];
-        characters[0] = 'A';
-        for (int i = 1; i < characters.length; i++) {
-            characters[i] = (char)(characters[i - 1] + 1);
-        }
         Scanner in = new Scanner(System.in);
         while (in.hasNextLine()) {
             String a = in.nextLine();

@@ -20,7 +20,7 @@ public class ex2 {
             }
             swap(ji, ou, arr);
         }
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
     }
 
     private static void swap(int ji, int ou, int[] arr) {
