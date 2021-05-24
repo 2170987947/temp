@@ -11,9 +11,11 @@ public class ex2 {
         while (ou < arr.length && ji < arr.length) {
             if (ou  < arr.length && arr[ou] % 2 == 0) {
                 ou += 2;
+                continue;
             }
             if (ji < arr.length && arr[ji] % 2 != 0) {
                 ji += 2;
+                continue;
             }
             if (ou >= arr.length || ji >= arr.length) {
                 break;
