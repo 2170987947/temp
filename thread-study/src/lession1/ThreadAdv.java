@@ -16,12 +16,12 @@ public class ThreadAdv {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    for (int i = 0; i < 2; i++) {
-                        try {
+                    try {
+                        for (int i = 0; i < 2; i++) {
                             test();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
                         }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             }).start();
