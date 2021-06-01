@@ -2,7 +2,7 @@ package lession2;
 
 public class JionThread {
     public static void main(String[] args) throws InterruptedException {
-//        test();
+        test();
         test2();
     }
 
