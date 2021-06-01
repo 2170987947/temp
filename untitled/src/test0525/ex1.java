@@ -56,7 +56,10 @@ public class ex1 {
     }
 
     private static int isPrimeMonth(int nMonth) {
-        if (nMonth == 1 || nMonth == 2) {
+        if (nMonth == 1) {
+            return 2;
+        }
+        if (nMonth == 2) {
             return 1;
         }
         for (int i = 2; i <= Math.sqrt(nMonth); i++) {
