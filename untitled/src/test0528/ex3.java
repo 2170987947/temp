@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class ex3 {
     public static void main(String[] args) {
+        long[] l = new long[21];
+        l[0] = l[1] = 1;
+        l[2] = 2;
+        long[] k = new long[21];
+        k[0] = k[1] = 0;
+        k[2] = 1;
+        for (int i = 3; i < 21; i++) {
+            l[i] = i * l[i - 1];
+            k[i] = (i - 1) * (k[i - 1] + k[i - 2]);
+        }
         Scanner in = new Scanner(System.in);
         while (in.hasNextInt()) {
             int n = in.nextInt();
-            System.out.println(ratio(n) * 100 + "0%");
+            System.out.printf("%.2f%%\n",(float)k[n] / l[n] * 100);
         }
-    }
-
-    private static float ratio(int n) {
-        int total = 1;
-        for (int i = 1; i <= n; i++) {
-            total *= i;
-        }
-        int bu = total - total / n;
-        total *= 100;
-        return (float) bu / total;
     }
 }
