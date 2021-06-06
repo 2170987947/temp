@@ -1,8 +1,7 @@
 package lession4;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class CallableTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -19,5 +18,15 @@ public class CallableTest {
         // 当前线程阻塞等待 task线程执行完毕，获取执行结果再往下执行
         System.out.println(1);
         System.out.println(task.get());
+        ExecutorService pool = Executors.newCachedThreadPool();
+        pool.execute(task);
+        pool.submit(task);
+        ReentrantLock lock = new ReentrantLock();
+        lock.lock();
+        try {
+
+        } finally {
+            lock.unlock();
+        }
     }
 }
