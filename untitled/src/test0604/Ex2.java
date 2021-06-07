@@ -25,7 +25,6 @@ public class Ex2 {
                     } else {
                         in.add(Integer.parseInt(p[i]));
                     }
-
 //                    if (!(p[i] == "+" || p[i] == "-" || p[i] == "/" || p[i] == "*")) {
 //                    } else if ((p[i] == "+" || p[i] == "-" || p[i] == "/" || p[i] == "*")){
 //                        operate.add(p[i]);
