@@ -15,6 +15,5 @@ public class Ex1 {
     }
 
     private static void isWin(String[] a) {
-
     }
 }
