@@ -1,6 +1,5 @@
 package lession5;
 
-import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
 public class LatchTest {
@@ -20,6 +19,5 @@ public class LatchTest {
         }
         latch.await();
         System.out.println(1);
-        Set
     }
 }
