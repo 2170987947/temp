@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Ex2 {
     private static int[] yuan(int[][] mat, int n , int m, int start) {
-        int[] t = new int[];
+        int[] t = new int[1];
         return t;
     }
     public int[] clockwisePrint(int[][] mat, int n, int m) {
@@ -19,5 +19,6 @@ public class Ex2 {
 
             int[] a = yuan(mat, n, m, 0);
         }
+        return r;
     }
 }
