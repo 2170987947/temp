@@ -12,5 +12,6 @@ public class Ex1 {
         t.start();
         t.join();
         System.out.println("main");
+        
     }
 }
