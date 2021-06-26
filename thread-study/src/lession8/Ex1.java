@@ -9,6 +9,7 @@ public class Ex1 {
                 System.out.println("t");
             }
         });
+        
         t.start();
         t.join();
         System.out.println("main");
