@@ -11,6 +11,7 @@ public class Ex1 {
         });
         t.start();
         t.join();
+        System.out.println(Thread.activeCount());
         System.out.println("main");
     }
 }
