@@ -26,7 +26,7 @@ public class ThreadDemo3 {
             Thread.sleep(10 * 1000);
             System.out.println(Thread.currentThread().getName() + ": 老板来电话了，得赶紧通知李四是个骗子");
             t.interrupt();
-            
+
         }
     }
 }
