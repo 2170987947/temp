@@ -7,7 +7,7 @@ public class TestGson {
     public static void main(String[] args) {
         Student student = new Student();
         student.setId("18060");
-        student.setUsername("ff");
+        student.setUsername("fff");
         Gson gson = new GsonBuilder().create();
         String string = gson.toJson(student);
         System.out.println(string);

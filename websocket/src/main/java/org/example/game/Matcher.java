@@ -62,7 +62,7 @@ public class Matcher {
     }
 
     private static Matcher matcher = new Matcher();
-    
+
     public static Matcher getInstance() {
         return matcher;
     }
