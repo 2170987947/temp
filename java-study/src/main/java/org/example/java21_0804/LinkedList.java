@@ -35,4 +35,18 @@ public class LinkedList {
         }
         return false;
     }
+
+    private void invertLinkedList() {
+        Node cur = head.next;
+        Node pre = head;
+        pre.next = null;
+        while (cur != null) {
+            Node next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        head = pre;
+    }
+
 }
