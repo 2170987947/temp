@@ -8,6 +8,7 @@ public class Ex1 {
         int n = s.nextInt();
         for (int i = 0; i < n; i++) {
             System.out.println(i);
+            
         }
     }
 }

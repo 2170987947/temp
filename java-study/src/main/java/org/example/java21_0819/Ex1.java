@@ -1,4 +1,4 @@
-package org.example.java21_0919;
+package org.example.java21_0819;
 
 import java.util.Scanner;
 
