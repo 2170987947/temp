@@ -60,5 +60,4 @@ public class Solution {
         }
         return Integer.parseInt(r.toString());
     }
-    
 }
