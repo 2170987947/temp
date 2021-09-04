@@ -7,6 +7,8 @@ public class Ex1 {
         Scanner s = new Scanner(System.in);
         int m = s.nextInt();
         int n = s.nextInt();
+
+        
         int count = 0;
         for (int i = m; i <= n; i++) {
             int q = i % 10;
