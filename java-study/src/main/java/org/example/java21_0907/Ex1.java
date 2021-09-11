@@ -17,7 +17,6 @@ public class Ex1 {
     }
 
     private static void _quickSort(int[] arr, int start, int end) {
-
         
         if (end - start < 1) {
             return;
