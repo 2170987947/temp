@@ -10,7 +10,6 @@ public class Ex1 {
         quickSort(arr);
         System.out.println(Arrays.toString(arr));
     }
-
     
     private static void quickSort(int[] arr) {
         _quickSort(arr, 0, arr.length - 1);
