@@ -15,7 +15,6 @@ public class Ex1 {
     }
 
     private static void _quickSort(int[] arr, int start, int end) {
-        
         if (end - start < 1) {
             return;
         }
@@ -44,5 +43,9 @@ public class Ex1 {
         int t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
+    }
+
+    public static void mm(){
+        System.out.println("lll");
     }
 }
