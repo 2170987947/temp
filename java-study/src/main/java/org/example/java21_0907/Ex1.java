@@ -48,5 +48,6 @@ public class Ex1 {
     public static void mm(){
         System.out.println("lll");
         System.out.println("Hello");
+        System.out.println("lll");
     }
 }
