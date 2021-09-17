@@ -23,6 +23,8 @@ public class Ex1 {
         _quickSort(arr, index + 1, end);
     }
 
+    // 分割
+    // 返回已排好的关键字所在的下标
     private static int partition(int[] arr, int start, int end) {
         int i = start;
         int j = end;
