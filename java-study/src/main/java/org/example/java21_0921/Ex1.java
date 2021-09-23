@@ -1,4 +1,4 @@
-package org.example.java0921;
+package org.example.java21_0921;
 
 public class Ex1 {
     public static void main(String[] args) {

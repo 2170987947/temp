@@ -1,4 +1,4 @@
-package org.example.java0922;
+package org.example.java21_0922;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class MyFixedThreadPool {
 
     List<Worker> workers;
 
-    Boolean working = true;
+    volatile Boolean working = true;
 
     public MyFixedThreadPool(int poolSize, int queueSize) {
         queue = new LinkedBlockingQueue(queueSize);
