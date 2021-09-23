@@ -8,6 +8,7 @@ import javax.swing.*;
  * @date 2021/5/6 13:54
  */
 public interface Command {
+
     void execute(JPanel jPanel, Circle circle);
     void undo(JPanel jPanel);
 }
