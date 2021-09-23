@@ -11,7 +11,7 @@ public class MyFixedThreadPool {
 
     List<Worker> workers;
 
-    Boolean working = true;
+    volatile Boolean working = true;
 
     public MyFixedThreadPool(int poolSize, int queueSize) {
         queue = new LinkedBlockingQueue(queueSize);
