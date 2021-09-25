@@ -7,6 +7,9 @@ public class Ex1 {
         //
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
+            System.out.printf("");
+
+
 
         }
     }
