@@ -5,5 +5,8 @@ public class Ex4 {
         String str = "dshcujne c26 789cd snj";
         String a = str.replace(" ", "insert");
         System.out.println(a);
+        System.out.println(Character.isAlphabetic('c'));
+        System.out.println(Character.isDigit('0'));
+
     }
 }
