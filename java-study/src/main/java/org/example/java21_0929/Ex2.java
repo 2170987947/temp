@@ -8,9 +8,16 @@ public class Ex2 {
         while (s.hasNextInt()) {
             int n = s.nextInt();
             int sum = 0;
+            int ret = 0;
             while (n != 0) {
-
+                if ((n & 1) == 1) {
+                    sum++;
+                    ret = Math.max(sum, ret);
+                } else {
+                    sum = 0;
+                }
             }
+            System.out.println(sum);
         }
     }
 }
