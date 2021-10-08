@@ -40,6 +40,7 @@ public class Ex1 {
                 }
             }
             System.out.println(arr[m]);
+
         }
     }
 }
