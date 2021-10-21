@@ -1,7 +1,5 @@
 package org.example.java21_1020;
 
-import org.example.java21_0813.ListNode;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -20,7 +18,6 @@ public class Ex1 {
             list.add(cur.val);
             cur = cur.next;
         }
-
-        System.out.println(Arrays.toString(list.toArray()));
+        return list;
     }
 }
