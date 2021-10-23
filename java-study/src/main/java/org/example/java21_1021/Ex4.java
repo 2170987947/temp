@@ -15,5 +15,6 @@ public class Ex4 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i + 1;
         }
+        return arr;
     }
 }
