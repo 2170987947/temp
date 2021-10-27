@@ -43,17 +43,17 @@ class MinStack {
     }
     
     public int top() {
-        //if (!s1.isEmpty()) {
+        if (!s1.isEmpty()) {
             return s1.peek();
-        //}
-        //return -1;
+        }
+        return -1;
     }
     
     public int min() {
-        //if (!s2.isEmpty()) {
+        if (!s2.isEmpty()) {
             return s2.peek();
-        //}
-        //return -1;
+        }
+        return -1;
     }
 }
 
