@@ -1,31 +1,39 @@
-package org.example.pratice;
+package org.example.socket;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Server {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        // 监听 8080 端口
+public class HttpServer {
+    public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(8080);
+
         while (true) {
-            // 已经代表建立好的一条TCP连接（三次握手完成）
             Socket accept = serverSocket.accept();
-            // 字节方式处理
-            // 接收数据到inputStream.
             InputStream inputStream = accept.getInputStream();
             Scanner scanner = new Scanner(inputStream, "UTF-8");
-            String line = scanner.nextLine();
-            System.out.println(line);
-            // 将数据写到outputStream， 经过OS内部的TCP机制将数据发给客户端
+
             OutputStream outputStream = accept.getOutputStream();
             Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
             PrintWriter printWriter = new PrintWriter(writer);
-            printWriter.println("给你一条消息!");
+            // 谐响应
+            // 写响应行
+            printWriter.println("HTTP/1.0 200 OK");
+            // 写响应头
+            printWriter.println("Content-Type: text/html; charset=utf-8\r");
+            // 空行
+            printWriter.println();
+            // 写响应体， html内容
+            printWriter.println("<我是服务器，给你消息>");
             printWriter.flush();
-            // 四次挥手
+
+
+            String line = scanner.nextLine();
+            System.out.println(line);
+
             accept.close();
         }
+
     }
 }
