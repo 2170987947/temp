@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class RequestResponseTask implements Runnable {
-    private static final String DOC_BASH = "D:\\Git\\temp\\http-project2";
+    private static final String DOC_BASH = "D:\\Git\\temp\\http-project2\\DocBase";
     private final Socket accept;
     private static final Map<String, String> mimeTypeMap = new HashMap<>();
 
@@ -28,6 +28,8 @@ public class RequestResponseTask implements Runnable {
             Scanner scanner = new Scanner(inputStream, "UTF-8");
             scanner.next();
             String path = scanner.next();
+            // 读取 Http 版本信息
+            scanner.nextLine();
 
             String requestURI = path;
             String queryString = "";
@@ -38,12 +40,53 @@ public class RequestResponseTask implements Runnable {
             }
             System.out.println(requestURI);
 
+            Map<String, String> hearders = new HashMap<>();
+            String headerLine;
+            while (scanner.hasNextLine() && !((headerLine = scanner.nextLine()).isEmpty())) {
+                String[] part = headerLine.split(":");
+                String name = part[0].trim().toLowerCase();
+                String value = part[1].trim();
+
+                hearders.put(name, value);
+            }
+
             if (requestURI.equals("/")) {
                 requestURI = "/index.html";
             }
 
-            // 动态资源
-            if (requestURI.equals("/goodbye.html")) {
+            if (requestURI.equals("/profile")) {
+                OutputStream outputStream = accept.getOutputStream();
+                Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
+                PrintWriter printWriter = new PrintWriter(writer);
+
+                String username = null;
+                // 从 Cookie 中获取 username， 从请求中获取
+                String cookie = hearders.getOrDefault("cookie", "");
+                System.out.println(cookie);
+
+                printWriter.println("HTTP/1.0 200 OK");
+                printWriter.println("Content-Type: text/html; charset=utf-8");
+                printWriter.println();
+                if (username != null) {
+                    printWriter.printf("<h1>当前用户是： %s<h1>", username);
+                } else {
+                    printWriter.println("<h1>您需要先登录<h1>");
+                }
+
+                printWriter.flush();
+            }
+            if (requestURI.equals("/redirect-to")) {
+                OutputStream outputStream = accept.getOutputStream();
+                Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
+                PrintWriter printWriter = new PrintWriter(writer);
+
+                printWriter.println("HTTP/1.0 307 Temporary Redirect");
+                printWriter.println("Location: /hello.jpg");
+                printWriter.println();
+
+                printWriter.flush();
+
+            } else if (requestURI.equals("/goodbye.html")) {
                 OutputStream outputStream = accept.getOutputStream();
                 Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
                 PrintWriter printWriter = new PrintWriter(writer);
