@@ -7,6 +7,17 @@ public class Answer {
     // 出错原因
     private String reason;
     private String stdout;
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "errno=" + errno +
+                ", reason='" + reason + '\'' +
+                ", stdout='" + stdout + '\'' +
+                ", stderr='" + stderr + '\'' +
+                '}';
+    }
+
     private String stderr;
 
     public int getErrno() {
