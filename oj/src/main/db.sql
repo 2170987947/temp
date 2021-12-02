@@ -1,4 +1,4 @@
-create database if not exists oj;
+create database if not exists oj character set utf8mb4;
 
 use oj;
 drop table if exists oj_table;
