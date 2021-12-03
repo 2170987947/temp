@@ -108,8 +108,8 @@ public class ProblemDAO {
     public static void main(String[] args) {
 //        testInsert();
 //        testDelete(3);
-        testSelectOne(3);
-//        testSelectAll();
+//        testSelectOne(3);
+        testSelectAll();
     }
 
     private static void testSelectAll() {
