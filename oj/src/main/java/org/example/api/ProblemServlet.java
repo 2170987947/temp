@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.example.problem.Problem;
 import org.example.problem.ProblemDAO;
+import org.example.util.HttpUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @WebServlet("/problem")
@@ -34,7 +33,7 @@ public class ProblemServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String body = readBody(req);
+        String body = HttpUtil.readBody(req);
         Problem problem = gson.fromJson(body, Problem.class);
         ProblemDAO problemDAO = new ProblemDAO();
         problemDAO.insert(problem);
@@ -57,17 +56,7 @@ public class ProblemServlet extends HttpServlet {
         resp.getWriter().write("{\"ok\": 1}");
     }
 
-    private String readBody(HttpServletRequest req) throws UnsupportedEncodingException {
-        // 一字节为单位
-        int contentLength = req.getContentLength();
-        byte[] buf = new byte[contentLength];
-        try(InputStream inputStream = req.getInputStream()) {
-            inputStream.read(buf);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new String(buf, "utf-8");
-    }
+
 
     private void selectOne(int parseInt, HttpServletResponse resp) throws IOException {
         ProblemDAO problemDAO = new ProblemDAO();
