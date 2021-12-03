@@ -106,7 +106,7 @@ public class ProblemDAO {
     }
 
     public static void main(String[] args) {
-//        testInsert();
+        testInsert();
 //        testDelete(3);
 //        testSelectOne(3);
         testSelectAll();

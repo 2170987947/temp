@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/compiler")
+@WebServlet("/compile")
 public class CompileServlet extends HttpServlet {
     private Gson gson = new GsonBuilder().create();
 
@@ -28,9 +28,9 @@ public class CompileServlet extends HttpServlet {
 
         ProblemDAO problemDAO = new ProblemDAO();
         Problem problem = problemDAO.selectOne(compileRequest.getId());
-        if (problem == null) {
-
-        }
+//        if (problem == null) {
+//
+//        }
         String testCode = problem.getTestCode();
         String requestCode = compileRequest.getCode();
         String finalCode = mergeCode(testCode, requestCode);
@@ -55,6 +55,10 @@ public class CompileServlet extends HttpServlet {
     }
 
     private String mergeCode(String testCode, String requestCode) {
-        return "";
+        int pos = requestCode.lastIndexOf("}");
+        if (pos == -1) {
+            return null;
+        }
+        return requestCode.substring(0, pos) + testCode + "}";
     }
 }
