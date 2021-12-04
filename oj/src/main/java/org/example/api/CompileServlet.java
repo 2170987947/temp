@@ -28,9 +28,11 @@ public class CompileServlet extends HttpServlet {
 
         ProblemDAO problemDAO = new ProblemDAO();
         Problem problem = problemDAO.selectOne(compileRequest.getId());
-//        if (problem == null) {
-//
-//        }
+        if (problem == null) {
+            resp.setStatus(200);
+            resp.setContentType("application/json;charset=utf-8");
+            resp.getWriter().write("{\" code\":找不到代码}");
+        }
         String testCode = problem.getTestCode();
         String requestCode = compileRequest.getCode();
         String finalCode = mergeCode(testCode, requestCode);
