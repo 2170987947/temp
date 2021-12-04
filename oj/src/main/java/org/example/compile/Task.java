@@ -18,7 +18,7 @@ public class Task {
     private String COMPILE_ERROR;
 
     public Task() {
-        WORK_DIR = "./tmp/" + UUID.randomUUID().toString() + "/";
+        WORK_DIR = "D:\\Git\\temp\\oj/tmp/" + UUID.randomUUID().toString() + "/";
         CODE = WORK_DIR + CLASS + ".java";
         STDOUT = WORK_DIR + "stdout.txt";
         STDERR = WORK_DIR + "stderr.txt";
@@ -29,7 +29,7 @@ public class Task {
         Answer answer = new Answer();
 
         File file = new File(WORK_DIR);
-        if (!file.exists()) {
+        while (!file.exists()) {
             file.mkdirs();
         }
 
