@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.websocket.Session;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 @ToString
@@ -17,6 +18,46 @@ public class Room {
     private static final int MAX_ROW = 15;
     private static final int MAX_COL = 15;
     private String roomId;
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "gson=" + gson +
+                ", roomId='" + roomId + '\'' +
+                ", userId1=" + userId1 +
+                ", userId2=" + userId2 +
+                ", chessBoard=" + Arrays.toString(chessBoard) +
+                '}';
+    }
+
+    public Gson getGson() {
+        return gson;
+    }
+
+    public static int getMaxRow() {
+        return MAX_ROW;
+    }
+
+    public static int getMaxCol() {
+        return MAX_COL;
+    }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public int getUserId1() {
+        return userId1;
+    }
+
+    public int getUserId2() {
+        return userId2;
+    }
+
+    public int[][] getChessBoard() {
+        return chessBoard;
+    }
+
     private int userId1;
     private int userId2;
 
