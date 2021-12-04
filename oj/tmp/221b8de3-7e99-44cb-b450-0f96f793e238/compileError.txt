@@ -1,0 +1,7 @@
+D:\Git\temp\oj\tmp\221b8de3-7e99-44cb-b450-0f96f793e238\Solution.java:3: 错误: 不是语句
+StringBuffer
+^
+D:\Git\temp\oj\tmp\221b8de3-7e99-44cb-b450-0f96f793e238\Solution.java:3: 错误: 需要';'
+StringBuffer
+            ^
+2 个错误

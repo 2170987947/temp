@@ -1,0 +1,4 @@
+D:\Git\temp\oj\tmp\78e2ddd4-ec2d-4ca0-8dd1-3940de332bfc\Solution.java:4: ´íÎó: È±ÉÙ·µ»ØÓï¾ä
+    }
+    ^
+1 ¸ö´íÎó
