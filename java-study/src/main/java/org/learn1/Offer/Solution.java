@@ -57,7 +57,7 @@ class Solution {
         if (root == null) {
             return true;
         }
-        return root.left == root.right && isCommon(root.left, root.right);
+        return isCommon(root.left, root.right);
     }
 
     private boolean isCommon(TreeNode left, TreeNode right) {
