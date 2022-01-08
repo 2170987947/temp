@@ -69,4 +69,5 @@ class Solution {
         }
         return left.val == right.val && isCommon(left.left, right.right) && isCommon(left.right, right.left);
     }
+
 }
