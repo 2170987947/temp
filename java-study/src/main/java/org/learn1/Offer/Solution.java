@@ -60,7 +60,7 @@ class Solution {
         return isCommon(root.left, root.right);
     }
 
-    // 镜面
+    //
     private boolean isCommon(TreeNode left, TreeNode right) {
         if (left == null && right == null) {
             return true;
