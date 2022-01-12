@@ -71,4 +71,19 @@ class Solution {
         return left.val == right.val && isCommon(left.left, right.right) && isCommon(left.right, right.left);
     }
 
+    // 删除有序数组中的重复项
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int slow = 1;
+        int fast = 1;
+        while (fast < nums.length) {
+            if (nums[fast] != nums[fast - 1]) {
+                nums[slow++] = nums[fast];
+            }
+            fast++;
+        }
+        return slow;
+    }
 }
