@@ -43,5 +43,4 @@ class Q5 {
         s.replace(" ", "%20");
         return s;
     }
-
 }
