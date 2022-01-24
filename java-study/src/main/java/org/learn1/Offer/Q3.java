@@ -36,7 +36,6 @@ class Q4 {
         return false;
     }
 }
-
 //剑指offer 05 替换空格
 class Q5 {
     public String replaceSpace(String s) {
