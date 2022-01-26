@@ -2,6 +2,7 @@ package org.learn1.Offer;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 //剑指offer 03 数组中重复的数字
 class Q3 {
@@ -41,5 +42,21 @@ class Q5 {
     public String replaceSpace(String s) {
         s.replace(" ", "%20");
         return s;
+    }
+}
+//剑指offer 06 从尾到头打印链表
+class Q6 {
+    public int[] reversePrint(ListNode head) {
+        Stack<Integer> stack = new Stack<>();
+        ListNode cur = head;
+        while (cur !=null) {
+            stack.push(cur.val);
+            cur = cur.next;
+        }
+        int[] ans = new int[stack.size()];
+        for (int i = 0; i < stack.size(); i++) {
+            ans[i] = stack.pop();
+        }
+        return ans;
     }
 }
