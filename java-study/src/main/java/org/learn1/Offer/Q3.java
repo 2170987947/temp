@@ -1,9 +1,6 @@
 package org.learn1.Offer;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 //剑指offer 03 数组中重复的数字
 class Q3 {
@@ -73,7 +70,14 @@ class Q7 {
         return helper(preOrderList, inOrderList);
     }
 
-    private TreeNode helper(ArrayList<Integer> preOrderList, ArrayList<Integer> inOrderList) {
-        return null;
+    private TreeNode helper(List<Integer> preOrderList, List<Integer> inOrderList) {
+        if (inOrderList.size() == 0) {
+            return null;
+        }
+        TreeNode root = new TreeNode(preOrderList.remove(0));
+        int index = inOrderList.indexOf(root.val);
+        root.left = helper(preOrderList, inOrderList.subList(0, index));
+        root.right = helper(preOrderList, inOrderList.subList(index + 1, inOrderList.size()));
+        return root;
     }
 }
