@@ -1,5 +1,6 @@
 package org.learn1.Offer;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
@@ -58,5 +59,21 @@ class Q6 {
             ans[i] = stack.pop();
         }
         return ans;
+    }
+}
+//剑指offer 07 重建二叉树
+class Q7 {
+    public TreeNode buildTree(int[] preorder, int[] inorder){
+        ArrayList<Integer> preOrderList = new ArrayList<>();
+        ArrayList<Integer> inOrderList = new ArrayList<>();
+        for (int i = 0; i < preorder.length; i++) {
+            preOrderList.add(preorder[i]);
+            inOrderList.add(inorder[i]);
+        }
+        return helper(preOrderList, inOrderList);
+    }
+
+    private TreeNode helper(ArrayList<Integer> preOrderList, ArrayList<Integer> inOrderList) {
+        return null;
     }
 }
