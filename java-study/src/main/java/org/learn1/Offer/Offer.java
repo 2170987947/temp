@@ -2,6 +2,10 @@ package org.learn1.Offer;
 
 import java.util.*;
 
+
+public class Offer {
+
+}
 //剑指offer 03 数组中重复的数字
 class Q3 {
     public int findRepeatNumber(int[] nums) {
