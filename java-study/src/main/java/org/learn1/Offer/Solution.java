@@ -4,7 +4,65 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Solution {
-
+    // 两数之和
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[]{};
+    }
+    // 在排序数组中查找元素的第一个和最后一个位置
+    public int[] searchRange(int[] nums, int target) {
+        int l = 0;
+        int r = nums.length - 1;
+        while (l <= r) {
+            int m = (l + r) / 2;
+            if (nums[m] < target) {
+                l = m + 1;
+            } else if (nums[m] > target) {
+                r = m - 1;
+             } else {
+                int ll = m;
+                int rr = m;
+                while (ll > 0 && nums[ll - 1] == target) {
+                    ll--;
+                }
+                while (rr < nums.length - 1 && nums[rr + 1] == target) {
+                    rr++;
+                }
+                return new int[]{ll, rr};
+            }
+        }
+        return new int[]{-1, -1};
+    }
+    // 两数相加
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        ListNode tail = head;
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            int n1 = l1 != null ? l1.val : 0;
+            int n2 = l2 != null ? l2.val : 0;
+            int sum = n1 + n2 + carry;
+            tail.next = new ListNode(sum % 10);
+            tail = tail.next;
+            carry = sum / 10;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
+        }
+        return head.next;
+    }
     // 反转链表
     public ListNode reverseList(ListNode head) {
         ListNode pre = null;
@@ -86,4 +144,32 @@ class Solution {
         }
         return slow;
     }
+
+    public int removeDuplicates2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int index = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[index++] = nums[i];
+            }
+        }
+        return index;
+    }
+
+    // 判断回文数
+    public boolean isPalindrome(int x) {
+        if (x < 0 || (x >= 10 && x % 10 == 0)) {
+            return false;
+        }
+        int r = 0;
+        while (x > r) {
+            r = r * 10 + x % 10;
+            x /= 10;
+        }
+        return x == r || (r / 10 == x);
+    }
+
+
 }
