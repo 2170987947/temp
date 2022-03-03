@@ -158,3 +158,58 @@ class Q10 {
         return two;
     }
 }
+// 剑指 Offer 11. 旋转数组的最小数字
+class Q11 {
+    public int minArray(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return -1;
+        }
+        int l = 0;
+        int r = numbers.length - 1;
+        while (l < r) {
+            int m = (l + r) / 2;
+            if (numbers[m] < numbers[r]) {
+                r = m;
+            } else if (numbers[m] > numbers[r]) {
+                l = m + 1;
+            } else {
+                r--;
+            }
+        }
+        return numbers[l];
+    }
+}
+// 剑指 Offer 12. 矩阵中的路径
+class Q12 {
+    public boolean exist(char[][] board, String word) {
+        if (board == null || board.length == 0 || board[0].length == 0) {
+            return false;
+        }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (dfs(i, j, 0, word, board)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    private static boolean dfs(int x, int y, int index, String word, char[][] array) {
+        if (x < 0 || x >= array.length || y < 0 || y >= array[0].length || array[x][y] != word.charAt(index)) {
+            return false;
+        }
+        if (index == word.length() - 1) {
+            return true;
+        }
+        array[x][y] = '\0';
+        boolean r = dfs(x + 1, y, index + 1, word, array) || dfs(x - 1, y, index + 1, word, array) || dfs(x, y + 1, index + 1, word, array) || dfs(x, y - 1, index + 1, word, array);
+        array[x][y] = word.charAt(index);
+        return r;
+    }
+}
+// 剑指 Offer 13. 机器人的运动范围
+class Q13 {
+    public int movingCount(int m, int n, int k) {
+
+    }
+}
