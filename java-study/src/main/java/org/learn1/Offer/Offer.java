@@ -45,7 +45,25 @@ class Q5 {
         s.replace(" ", "%20");
         return s;
     }
+    public String replaceSpace2(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        char[] a = new char[s.length() * 3];
+        int index = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                a[index++] = '%';
+                a[index++] = '2';
+                a[index++] = '0';
+            } else {
+                a[index++] = s.charAt(i);
+            }
+        }
+        return new String(a, 0, index);
+    }
 }
+
 //剑指offer 06 从尾到头打印链表
 class Q6 {
     public int[] reversePrint(ListNode head) {
@@ -82,6 +100,28 @@ class Q7 {
         int index = inOrderList.indexOf(root.val);
         root.left = helper(preOrderList, inOrderList.subList(0, index));
         root.right = helper(preOrderList, inOrderList.subList(index + 1, inOrderList.size()));
+        return root;
+    }
+    public TreeNode buildTree2(int[] preorder, int[] inorder) {
+        if (preorder == null) {
+            return null;
+        }
+        ArrayList<Integer> pre = new ArrayList<>();
+        ArrayList<Integer> in = new ArrayList<>();
+        for (int i = 0; i < preorder.length; i++) {
+            pre.add(preorder[i]);
+            in.add(inorder[i]);
+        }
+        return helper(pre, in);
+    }
+    private TreeNode helper2(ArrayList<Integer> pre, ArrayList<Integer> in) {
+        if (in == null || in.size() == 0) {
+            return null;
+        }
+        TreeNode root = new TreeNode(pre.remove(0));
+        int index = in.indexOf(root.val);
+        root.left = helper(pre, in.subList(0, index));
+        root.right = helper(pre, in.subList(index + 1, in.size()));
         return root;
     }
 }

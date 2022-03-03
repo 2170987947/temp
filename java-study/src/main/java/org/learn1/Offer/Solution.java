@@ -39,6 +39,24 @@ class Solution {
         }
         return new int[]{-1, -1};
     }
+    // 二维数组中的查找
+    public boolean findNumberIn2DArray(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return false;
+        }
+        int i = 0;
+        int j = matrix[0].length - 1;
+        while (i < matrix.length && j >= 0) {
+            if (matrix[i][j] < target) {
+                i++;
+            } else if (matrix[i][j] > target) {
+                j--;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
     // 两数相加
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
@@ -152,6 +170,16 @@ class Solution {
         int index = 1;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] != nums[i - 1]) {
+                nums[index++] = nums[i];
+            }
+        }
+        return index;
+    }
+    // 移除元素
+    public int removeElement(int[] nums, int val) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
                 nums[index++] = nums[i];
             }
         }
