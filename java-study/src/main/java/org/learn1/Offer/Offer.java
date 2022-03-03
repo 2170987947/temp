@@ -102,26 +102,59 @@ class Q7 {
         root.right = helper(preOrderList, inOrderList.subList(index + 1, inOrderList.size()));
         return root;
     }
-    public TreeNode buildTree2(int[] preorder, int[] inorder) {
-        if (preorder == null) {
-            return null;
-        }
-        ArrayList<Integer> pre = new ArrayList<>();
-        ArrayList<Integer> in = new ArrayList<>();
-        for (int i = 0; i < preorder.length; i++) {
-            pre.add(preorder[i]);
-            in.add(inorder[i]);
-        }
-        return helper(pre, in);
+}
+// 剑指 Offer 09. 斐波那契数列用两个栈实现队列
+class Q9 {
+    Stack<Integer> s1 = new Stack<>();
+    Stack<Integer> s2 = new Stack<>();
+    public void appendTail(int value) {
+        s1.push(value);
     }
-    private TreeNode helper2(ArrayList<Integer> pre, ArrayList<Integer> in) {
-        if (in == null || in.size() == 0) {
-            return null;
+    public int deleteHead() {
+        if (s2.size() > 0) {
+            return s2.pop();
+        } else {
+            if (s1.size() <= 0) {
+                return -1;
+            } else {
+                while (s1.size() > 0) {
+                    s2.push(s1.pop());
+                }
+                return s2.pop();
+            }
         }
-        TreeNode root = new TreeNode(pre.remove(0));
-        int index = in.indexOf(root.val);
-        root.left = helper(pre, in.subList(0, index));
-        root.right = helper(pre, in.subList(index + 1, in.size()));
-        return root;
+
+    }
+
+}
+
+class Q10 {
+    //剑指 Offer 10- I. 斐波那契数列
+    public int fib(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        int one = 0;
+        int two = 1;
+        for (int i = 2; i <= n; i++) {
+            int three = (one + two) % 1000000007;
+            one = two;
+            two = three;
+        }
+        return two;
+    }
+    // 剑指 Offer 10- II. 青蛙跳台阶问题
+    public int numWays(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        int one = 1;
+        int two = 1;
+        for (int i = 2; i <= n; i++) {
+            int three = (one + two) % 1000000007;
+            one = two;
+            two = three;
+        }
+        return two;
     }
 }
