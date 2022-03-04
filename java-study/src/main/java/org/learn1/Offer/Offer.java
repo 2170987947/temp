@@ -210,6 +210,51 @@ class Q12 {
 // 剑指 Offer 13. 机器人的运动范围
 class Q13 {
     public int movingCount(int m, int n, int k) {
-
+        if (m <= 0 || n <= 0 || k < 0) {
+            return 0;
+        }
+        boolean[][] visit = new boolean[m][n];
+        int count = 0;
+        visit[0][0] = true;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (get(i) + get(j) > k) {
+                    continue;
+                }
+                if (i - 1 >= 0 && visit[i - 1][j]) {
+                    visit[i][j] = true;
+                }
+                if (j - 1 >= 0 && visit[i][j - 1]) {
+                    visit[i][j] = true;
+                }
+                if (visit[i][j]) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    private static int get(int num) {
+        int r = 0;
+        while (num > 0) {
+            r += num % 10;
+            num /= 10;
+        }
+        return r;
+    }
+    // dfs + 剪枝
+    public int movingCount2(int m, int n, int k) {
+        if (m <= 0 || n <= 0 || k < 0) {
+            return 0;
+        }
+        boolean[][] visit = new boolean[m][n];
+        return dfs(visit, 0, 0, m, n, k);
+    }
+    private static int dfs(boolean[][] visit, int x, int y, int m, int n, int k) {
+        if (x < 0 || y < 0 || x >= m || y >= n || visit[x][y] || get(x) + get(y) > k) {
+            return 0;
+        }
+        visit[x][y] = true;
+        return 1 + dfs(visit, x + 1, y, m, n, k) + dfs(visit, x, y + 1, m, n, k);
     }
 }
