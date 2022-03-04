@@ -505,6 +505,99 @@ class Q28 {
 // 剑指 Offer 29. 顺时针打印矩阵
 class Q29 {
     public int[] spiralOrder(int[][] matrix) {
-
+        if (matrix == null || matrix.length ==0 || matrix[0].length == 0) {
+            return new int[0];
+        }
+        int[] arr = new int[matrix.length * matrix[0].length];
+        int index = 0;
+        int left = 0;
+        int top = 0;
+        int right = matrix[0].length - 1;
+        int bottom = matrix.length - 1;
+        while (left <= right && top <= bottom) {
+            for (int col = left; col <= right; col++) {
+                arr[index++] = matrix[top][col];
+            }
+            for (int row = top + 1; row <= bottom; row++) {
+                arr[index++] = matrix[row][right];
+            }
+            if (left < right && top < bottom) {
+                for (int col = right - 1; col > left; col--) {
+                    arr[index++] = matrix[bottom][col];
+                }
+                for (int row = bottom; row > top; row--) {
+                    arr[index++] = matrix[row][left];
+                }
+            }
+            left++;
+            right--;
+            top++;
+            bottom--;
+        }
+        return arr;
+    }
+}
+// 剑指 Offer 32 - II. 从上到下打印二叉树 II
+class Q32II {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> lists = new ArrayList<>();
+        if (root == null) {
+            return lists;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode t = queue.poll();
+                list.add(t.val);
+                if (t.left != null) {
+                    queue.add(t.left);
+                }
+                if (t.right != null) {
+                    queue.add(t.right);
+                }
+            }
+            lists.add(list);
+        }
+        return lists;
+    }
+}
+// 剑指 Offer 32 - III. 从上到下打印二叉树 III
+class Q32III {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> lists = new LinkedList<>();
+        if (root == null) {
+            return lists;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            LinkedList<Integer> list = new LinkedList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode t = queue.poll();
+                if (lists.size() % 2 == 0) {
+                    list.addLast(t.val);
+                } else {
+                    list.addFirst(t.val);
+                }
+                if (t.left != null) {
+                    queue.add(t.left);
+                }
+                if (t.right != null) {
+                    queue.add(t.right);
+                }
+            }
+            lists.add(list);
+        }
+        return lists;
+    }
+}
+// 剑指 Offer 33. 二叉搜索树的后序遍历序列
+class Q33 {
+    public boolean verifyPostorder(int[] postorder) {
+        return false;
     }
 }
