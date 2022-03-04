@@ -258,3 +258,24 @@ class Q13 {
         return 1 + dfs(visit, x + 1, y, m, n, k) + dfs(visit, x, y + 1, m, n, k);
     }
 }
+// 剑指 Offer 14- I. 剪绳子
+// ① 当所有绳段长度相等时，乘积最大。② 最优的绳段长度为 33 。
+class Q14 {
+    public int cuttingRope(int n) {
+        if (n <= 1) {
+            return 0;
+        }
+        if (n <= 3) {
+            return n - 1;
+        }
+        int a = n / 3;
+        int b = n % 3;
+        if (b == 0) {
+            return (int)Math.pow(3, a);
+        } else if (b == 1) {
+            return (int)Math.pow(3, a - 1) * 4;
+        } else {
+            return (int)Math.pow(3, a) * 2;
+        }
+    }
+}
