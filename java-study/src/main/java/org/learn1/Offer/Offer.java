@@ -279,3 +279,232 @@ class Q14 {
         }
     }
 }
+// 剑指 Offer 14- II. 剪绳子 II
+class Q14II {
+    public int cuttingRope(int n) {
+        if (n <= 3) {
+            return n - 1;
+        }
+        long r = 1;
+        while (n > 4) {
+            r *= 3;
+            r %= 1000000007;
+            n -= 3;
+        }
+        return (int)(r * n % 1000000007);
+    }
+}
+// 剑指 Offer 15. 二进制中1的个数
+class Q15 {
+    public int hammingWeight(int n) {
+        int c = 0;
+        for (int i = 0; i < 32; i++) {
+            if ((n & (1 << i)) != 0) {
+                c++;
+            }
+        }
+        return c;
+    }
+}
+// 剑指 Offer 16. 数值的整数次方
+class Q16 {
+    public double myPow(double x, int n) {
+        return Math.pow(x, n);
+    }
+    public double myPow2(double x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        if (n == -1) {
+            return 1/x;
+        }
+        if (n == 1) {
+            return x;
+        }
+        double half = myPow2(x, n/2);
+        return n % 2 == 0 ? half * half : half * half * (n > 0 ? x : 1/x);
+    }
+}
+// 剑指 Offer 17. 打印从1到最大的n位数
+class Q17 {
+    public int[] printNumbers(int n) {
+        if (n <= 0) {
+            return new int[]{0};
+        }
+        int length = (int)Math.pow(10, n);
+        int[] arr = new int[length - 1];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+        return arr;
+    }
+}
+// 剑指 Offer 18. 删除链表的节点
+class Q18 {
+    public ListNode deleteNode(ListNode head, int val) {
+        ListNode t = new ListNode(0);
+        t.next = head;
+        ListNode pre = t;
+        ListNode cur = head;
+        while (cur != null) {
+            if (cur.val == val) {
+                pre.next = cur.next;
+                cur = cur.next;
+            } else {
+                pre = cur;
+                cur = cur.next;
+            }
+        }
+        return t.next;
+    }
+}
+// 剑指 Offer 20. 表示数值的字符串
+class Q20 {
+    public boolean isNumber(String s) {
+        // ToDo:
+        return false;
+    }
+}
+// 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
+class Q21 {
+    public int[] exchange(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return nums;
+        }
+        int l = 0;
+        int r = nums.length - 1;
+        while (l < r) {
+            while (l <= r && nums[r] % 2 == 0) {
+                r--;
+            }
+            while (l <= r && nums[l] % 2 != 0) {
+                l++;
+            }
+            if (l < r) {
+                swap(nums, l, r);
+            }
+        }
+        return nums;
+    }
+    private static void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
+    }
+}
+// 剑指 Offer 22. 链表中倒数第k个节点
+class Q22 {
+    public ListNode getKthFromEnd(ListNode head, int k) {
+        if (k <= 0 || head == null) {
+            return head;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        while (k > 0) {
+            if (fast != null) {
+                fast = fast.next;
+            } else {
+                return null;
+            }
+            k--;
+        }
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+}
+// 剑指 Offer 24. 反转链表
+class Q24 {
+    public ListNode reverseList(ListNode head) {
+        ListNode p = null;
+        ListNode c = head;
+        ListNode n = null;
+        while (c != null) {
+            n = c.next;
+            c.next = p;
+            p = c;
+            c = n;
+        }
+        return p;
+    }
+}
+// 剑指 Offer 25. 合并两个排序的链表
+class Q25 {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        ListNode cur = head;
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                cur.next = l1;
+                l1 = l1.next;
+            } else {
+                cur.next = l2;
+                l2 = l2.next;
+            }
+            cur = cur.next;
+        }
+        cur.next = l1 != null ? l1 : l2;
+        return head.next;
+    }
+}
+// 剑指 Offer 26. 树的子结构
+class Q26 {
+    public boolean isSubStructure(TreeNode A, TreeNode B) {
+        if (A == null || B == null) {
+            return false;
+        }
+        if (A.val == B.val && helper(A.left, B.left) && helper(A.right, B.right)) {
+            return true;
+        }
+        return isSubStructure(A.left, B) || isSubStructure(A.right, B);
+    }
+    private static boolean helper(TreeNode a, TreeNode b) {
+        if (b == null) {
+            return true;
+        }
+        if (a == null) {
+            return false;
+        }
+        return a.val == b.val && helper(a.left, b.left) && helper(a.right, b.right);
+    }
+}
+// 剑指 Offer 27. 二叉树的镜像
+class Q27 {
+    public TreeNode mirrorTree(TreeNode root) {
+        if (root == null) {
+            return root;
+        }
+        TreeNode t = root.left;
+        root.left = root.right;
+        root.right = t;
+        mirrorTree(root.left);
+        mirrorTree(root.right);
+        return root;
+    }
+}
+// 剑指 Offer 28. 对称的二叉树
+class Q28 {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        return isMirror(root.left, root.right);
+    }
+    private static boolean isMirror(TreeNode a, TreeNode b) {
+        if (a == null && b == null) {
+            return true;
+        }
+        if (a == null || b == null){
+            return false;
+        }
+        return a.val == b.val && isMirror(a.left, b.right) && isMirror(a.right, b.left);
+    }
+}
+// 剑指 Offer 29. 顺时针打印矩阵
+class Q29 {
+    public int[] spiralOrder(int[][] matrix) {
+
+    }
+}
