@@ -642,4 +642,342 @@ class Q34 {
         tmp.remove(tmp.size() - 1);
     }
 }
-//
+// 剑指 Offer 35. 复杂链表的复制
+class Q35 {
+    Map<Node, Node> map = new HashMap<>();
+    public Node copyRandomList(Node head) {
+        if (head == null) {
+            return null;
+        }
+        while (!map.containsKey(head)) {
+            Node node = new Node(head.val);
+            map.put(head, node);
+            node.next = copyRandomList(head.next);
+            node.random = copyRandomList(head.random);
+        }
+        return map.get(head);
+    }
+}
+// 剑指 Offer 36. 二叉搜索树与双向链表
+class Q36 {
+    Node pre, head;
+    public Node treeToDoublyList(Node root) {
+        if (root == null) {
+            return null;
+        }
+        dfs(root);
+        pre.right = head;
+        head.left = pre;
+        return head;
+    }
+    private void dfs(Node cur) {
+        if (cur == null) {
+            return;
+        }
+        dfs(cur.left);
+        if (pre == null) {
+            head = cur;
+        } else {
+            pre.right = cur;
+        }
+        cur.left = pre;
+        pre = cur;
+        dfs(cur.right);
+    }
+}
+// 剑指 Offer 38. 字符串的排列
+class Q38 {
+    public String[] permutation(String s) {
+        if (s == null) {
+            return new String[0];
+        }
+        Set<String> list = new HashSet<>();
+        char[] arr = s.toCharArray();
+        boolean[] visited = new boolean[arr.length];
+        dfs(arr, "", visited, list);
+        return list.toArray(new String[0]);
+    }
+    private void dfs(char[] arr, String s, boolean[] visited, Set<String> list) {
+        if (arr.length == s.length()) {
+            list.add(s);
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (visited[i]) {
+                continue;
+            }
+            visited[i] = true;
+            dfs(arr, s + String.valueOf(arr[i]), visited, list);
+            visited[i] = false;
+        }
+    }
+}
+// 剑指 Offer 39. 数组中出现次数超过一半的数字
+class Q39 {
+    public static int majorityElementDiy(int[] nums) {
+        if (nums == null) {
+            return -1;
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            int count = map.getOrDefault(num, 0);
+            map.put(num, count + 1);
+            if (count + 1 > (nums.length / 2)) {
+                return num;
+            }
+        }
+        return -1;
+    }
+    public static int majorityElementDiy2(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
+}
+// 剑指 Offer 42. 连续子数组的最大和
+class Q42 {
+    public int maxSubArray(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        int max = dp[0];
+        for (int i = 1; i < nums.length; i++) {
+            dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+            max = Math.max(dp[i], max);
+        }
+        return max;
+    }
+}
+// 剑指 Offer 45. 把数组排成最小的数
+class Q45 {
+    public String minNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return "";
+        }
+        String[] arr = new String[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            arr[i] = String.valueOf(nums[i]);
+        }
+        quickSort(arr, 0, arr.length - 1);
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            s.append(arr[i]);
+        }
+        return s.toString();
+    }
+    private void quickSort(String[] arr, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int i = l;
+        int j = r;
+        while (i < j) {
+            while (i < j && (arr[l] + arr[j]).compareTo(arr[j] + arr[l]) <= 0) {
+                j--;
+            }
+            while (i < j && (arr[l] + arr[i]).compareTo(arr[i] + arr[l]) >= 0) {
+                i++;
+            }
+            swap(arr, i, j);
+        }
+        swap(arr, l, j);
+        quickSort(arr, l, j - 1);
+        quickSort(arr, j + 1, r);
+    }
+    private void swap(String[] arr, int i, int j) {
+        String t = arr[i];
+        arr[i] =arr[j];
+        arr[j] = t;
+    }
+}
+// 剑指 Offer 46. 把数字翻译成字符串
+class Q46 {
+    // ToDo
+    public int translateNum(int num) {
+
+    }
+}
+// 剑指 Offer 47. 礼物的最大价值
+class Q47 {
+    public int maxValue(int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        int[][] value = new int[grid.length + 1][grid[0].length + 1];
+        for (int row = 0; row < value.length; row++) {
+            value[row][0] = 0;
+        }
+        for (int col = 0; col < value[0].length; col++) {
+            value[0][col] = 0;
+        }
+        for (int i = 1; i < value.length; i++) {
+            for (int j = 1; j < value[0].length; j++) {
+                value[i][j] = Math.max(value[i - 1][j], value[i][j - 1]) + grid[i - 1][j - 1];
+            }
+        }
+        return value[grid.length][grid[0].length];
+    }
+}
+// 剑指 Offer 48. 最长不含重复字符的子字符串
+class Q48 {
+    public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        int max = 0;
+        int index = 0;
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            while (set.contains(s.charAt(i))) {
+                set.remove(s.charAt(index++));
+            }
+            set.add(s.charAt(i));
+            max = Math.max(set.size(), max);
+        }
+        return max;
+    }
+}
+// 剑指 Offer 52. 两个链表的第一个公共节点
+class Q52 {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) {
+            return null;
+        }
+        Set<ListNode> set = new HashSet<>();
+        ListNode cur = headA;
+        while (cur != null) {
+            set.add(cur);
+            cur = cur.next;
+        }
+        cur = headB;
+        while (cur != null) {
+            if (set.contains(cur)) {
+                return cur;
+            }
+            cur = cur.next;
+        }
+        return null;
+    }
+}
+// 剑指 Offer 53 - I. 在排序数组中查找数字 I
+class Q53I {
+    public int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int l = 0;
+        int r = nums.length - 1;
+        int index = 0;
+        while (l <= r) {
+            int m = (l + r) / 2;
+            if (nums[m] < target) {
+                l = m + 1;
+            } else if (nums[m] > target) {
+                r = m - 1;
+            } else {
+                while (m > 0 && nums[m] == nums[m - 1]) {
+                    m--;
+                }
+                index = m;
+                break;
+            }
+        }
+        int count = 0;
+        while (index < nums.length) {
+            if (nums[index] == target) {
+                count++;
+            } else {
+                break;
+            }
+            index++;
+        }
+        return count;
+    }
+}
+// 剑指 Offer 53 - II. 0～n-1中缺失的数字
+class Q53II {
+    public int missingNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i) {
+                return i;
+            }
+        }
+        return nums.length;
+    }
+}
+// 剑指 Offer 55 - I. 二叉树的深度
+class Q55I {
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    }
+}
+// 剑指 Offer 55 - II. 平衡二叉树
+class Q55II {
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        int l = depth(root.left);
+        int r = depth(root.right);
+        return Math.abs(l - r) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+    }
+    private int depth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(depth(root.left), depth(root.right));
+    }
+}
+// 剑指 Offer 56 - II. 数组中数字出现的次数 II
+class Q56II {
+    public int singleNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        if (nums.length == 1) {
+            return nums[nums.length - 1];
+        }
+        Arrays.sort(nums);
+        int index = 0;
+        while (index < nums.length - 1) {
+            if (nums[index] == nums[index + 1]) {
+                index += 3;
+            } else {
+                return nums[index];
+            }
+        }
+        if (nums[nums.length - 1] != nums[nums.length - 2]) {
+            return nums[nums.length - 1];
+        } else {
+            return -1;
+        }
+    }
+}
+// 剑指 Offer 57. 和为s的两个数字
+class Q57 {
+    public int[] twoSum(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return new int[0];
+        }
+        int l = 0;
+        int r = nums.length - 1;
+        while (l < r) {
+            int sum = nums[l] + nums[r];
+            if (sum > target) {
+                r--;
+            } else if (sum < target) {
+                l++;
+            } else {
+                return new int[]{nums[l], nums[r]};
+            }
+        }
+        return new int[0];
+    }
+}
