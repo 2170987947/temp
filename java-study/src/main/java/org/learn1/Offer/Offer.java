@@ -598,6 +598,48 @@ class Q32III {
 // 剑指 Offer 33. 二叉搜索树的后序遍历序列
 class Q33 {
     public boolean verifyPostorder(int[] postorder) {
-        return false;
+        if (postorder == null) {
+            return false;
+        }
+        return recur(postorder, 0, postorder.length - 1);
+    }
+    private static boolean recur(int[] postorder, int left, int right) {
+        if (left >= right) {
+            return true;
+        }
+        int index = left;
+        int root = postorder[right];
+        while (postorder[index] < root) {
+            index++;
+        }
+        int mid = index;
+        while (postorder[index] > root) {
+            index++;
+        }
+        return index == right && recur(postorder, left, mid - 1)
+                && recur(postorder, mid, right - 1);
     }
 }
+// 剑指 Offer 34. 二叉树中和为某一值的路径
+class Q34 {
+    List<List<Integer>> lists = new LinkedList<>();
+    public List<List<Integer>> pathSum(TreeNode root, int target) {
+        helper(root, target, new LinkedList<Integer>());
+        return lists;
+    }
+    private void helper(TreeNode root, int sum, LinkedList<Integer> tmp) {
+        if (root == null) {
+            return;
+        }
+        tmp.add(root.val);
+        sum -= root.val;
+        if (sum == 0 && root.left == null && root.right == null) {
+            lists.add(new LinkedList<>(tmp));
+        } else {
+            helper(root.left, sum, tmp);
+            helper(root.right, sum, tmp);
+        }
+        tmp.remove(tmp.size() - 1);
+    }
+}
+//
