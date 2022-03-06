@@ -733,6 +733,21 @@ class Q39 {
         return nums[nums.length / 2];
     }
 }
+//剑指 Offer 40. 最小的k个数
+class Q40 {
+    public int[] getLeastNumbers(int[] arr, int k) {
+        if (arr == null || arr.length == 0) {
+            return new int[0];
+        }
+        Arrays.sort(arr);
+        if (arr.length <= k) {
+            return arr;
+        }
+        int[] r = new int[k];
+        r = Arrays.copyOfRange(arr, 0, k);
+        return r;
+    }
+}
 // 剑指 Offer 42. 连续子数组的最大和
 class Q42 {
     public int maxSubArray(int[] nums) {
@@ -789,13 +804,6 @@ class Q45 {
         String t = arr[i];
         arr[i] =arr[j];
         arr[j] = t;
-    }
-}
-// 剑指 Offer 46. 把数字翻译成字符串
-class Q46 {
-    // ToDo
-    public int translateNum(int num) {
-
     }
 }
 // 剑指 Offer 47. 礼物的最大价值
