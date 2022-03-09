@@ -198,6 +198,42 @@ class Solution {
         }
         return x == r || (r / 10 == x);
     }
+    // 最长回文子串
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        int max = 1;
+        String r = "";
+        int i = 0, j = 0, end = 0;
+        for (i = 0; i < s.length(); i++) {
+            end = i + 1;
+            for (j = i; j < s.length(); j++) {
+                if (!isPalindrome(s.substring(i, j))) {
+                    if (end - i < j - i) {
+                        end = j;
+                    }
+                    continue;
+                }
+            }
+            if (max < end - i) {
+                r = s.substring(i, end);
+            }
+        }
+        return r;
+    }
+    private boolean isPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+        StringBuilder t = new StringBuilder(s);
+        t.reverse();
+        return t.toString().equals(s);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("".length());
+    }
 
 
 }
