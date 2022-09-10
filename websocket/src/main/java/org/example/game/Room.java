@@ -107,7 +107,68 @@ public class Room {
         }
     }
 
-    private int checkWinner(int userId, int row, int col) {
+    private int checkWinner(int chess, int row, int col) {
+        boolean done = false;
+        for (int c= col - 4; c <= col ; c++) {
+            if (c < 0 || c + 4 >= MAX_COL) {
+                continue;
+            }
+            if (chessBoard[row][c] == chess
+                    && chessBoard[row][c + 1] == chess
+                    && chessBoard[row][c + 2] == chess
+                    && chessBoard[row][c + 3] == chess
+                    && chessBoard[row][c + 4] == chess
+            ) {
+                done = true;
+            }
+        }
+
+        for (int r = row - 4; r <= row; r++) {
+            if (r < 0 || r + 4 >= MAX_ROW) {
+                continue;
+            }
+            if (chessBoard[r][col] == chess
+                    && chessBoard[r + 1][col] == chess
+                    && chessBoard[r + 2][col] == chess
+                    && chessBoard[r + 3][col] == chess
+                    && chessBoard[r + 4][col] == chess
+            ) {
+                done = true;
+            }
+        }
+
+        for (int r = row - 4, c = col - 4; r <= row && c <= col; r++, c++) {
+            if (r < 0 || r + 4 >= MAX_ROW || c < 0 || c + 4 >= MAX_COL) {
+                continue;
+            }
+            if (chessBoard[r][c] == chess
+                    && chessBoard[r + 1][c + 1] == chess
+                    && chessBoard[r + 2][c + 2] == chess
+                    && chessBoard[r + 3][c + 3] == chess
+                    && chessBoard[r + 4][c + 4] == chess
+            ) {
+                done = true;
+            }
+        }
+
+        for (int r = row - 4; r <= row; r++) {
+            for (int c = col + 4; c >= col; c--) {
+                if (r < 0 || c >= MAX_COL || r + 4 >= MAX_ROW || c - 4 < 0 ) {
+                    continue;
+                }
+                if (chessBoard[r][c] == chess
+                        && chessBoard[r + 1][c - 1] == chess
+                        && chessBoard[r + 2][c - 2] == chess
+                        && chessBoard[r + 3][c - 3] == chess
+                        && chessBoard[r + 4][c - 4] == chess
+                ) {
+                    done = true;
+                }
+            }
+        }
+        if (done) {
+            return chess;
+        }
         return 0;
     }
 }
